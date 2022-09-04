@@ -73,6 +73,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+// console.log(posts);
 export default {
   computed: {
     ...mapGetters("linkedIn", ["postsData"]),

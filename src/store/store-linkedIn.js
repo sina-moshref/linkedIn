@@ -1,3 +1,4 @@
+import axios from "axios";
 const state = {
   userData: {
     userName: "John Doe",
@@ -17,6 +18,13 @@ const state = {
     comments: 49,
     share: 2,
   },
+  posts: {
+    name: axios
+      .get("https://jsonplaceholder.typicode.com/posts/1")
+      .then((response) => {
+        return console.log(response.data);
+      }),
+  },
 };
 
 const mutations = {};
@@ -30,6 +38,14 @@ const getters = {
   postsData: (state) => {
     return state.postsData;
   },
+  posts: (state) => {
+    return state.posts;
+  },
+  // posts: (state) => {
+  //   return (state.posts = fetch("https://jsonplaceholder.typicode.com/posts")
+  //     .then((response) => response.json())
+  //     .then((json) => console.log(json)));
+  // },
 };
 
 export default {
