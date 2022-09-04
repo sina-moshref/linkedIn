@@ -11,7 +11,7 @@ import linkedIn from "./store-linkedIn";
  * async/await or return a Promise which resolves
  * with the Store instance.
  */
-
+///////
 export default store(function (/* { ssrContext } */) {
   const Store = createStore({
     modules: {
