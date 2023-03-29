@@ -28,7 +28,7 @@
     </div>
 
     <div class="post-img">
-      <img alt="profile pic" :src="randompic()" />
+      <img alt="profile pic" :src="img" />
     </div>
 
     <div class="sub-img">
@@ -86,10 +86,9 @@ export default {
       type: String,
       default: "",
     },
-  },
-  methods: {
-    randompic() {
-      return "https://picsum.photos/700";
+    img: {
+      type: String,
+      default: "",
     },
   },
 };

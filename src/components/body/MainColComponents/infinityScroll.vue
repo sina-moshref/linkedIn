@@ -2,7 +2,7 @@
   <div>
     <q-infinite-scroll @load="onLoad" :offset="250">
       <div v-for="item in items" :key="item.id" class="caption">
-        <post-single :title="item.title" :body="item.body" />
+        <post-single :title="item.title" :body="item.body" :img="randompic()" />
       </div>
       <template v-slot:loading>
         <div class="row justify-center q-my-md">
@@ -38,6 +38,8 @@ export default {
 
       const initData = posts.slice(0, 5);
 
+      console.log(initData);
+
       items.value = initData;
     });
 
@@ -52,6 +54,11 @@ export default {
         }, 1500);
       },
     };
+  },
+  methods: {
+    randompic() {
+      return `https://picsum.photos/700`;
+    },
   },
 };
 </script>
